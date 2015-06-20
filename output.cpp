@@ -6,17 +6,13 @@ void usage(char *);
 int main(int argc, char *argv[]) {
   char *name = strrchr(argv[0], '\\');
   ++name;
-  if (argc <= 1) {
+  if (argc < 3) {
     fprintf(stderr, "no argument vector\n");
     usage(name);
     return EXIT_FAILURE;
   }
-	if (argc ==2) {
-  	int iSize = atoi(argv[2]);
-	} else {
-		usage(name);
-		return EXIT_FAILURE;
-	}
+ 	int iSize = 0;
+  iSize = atoi(argv[2]);
 	for (int i = 0; i < iSize; i++) {
 		if (atoi(argv[1]) == 1) {
 			fprintf(stdout, "%c", 0x40);
